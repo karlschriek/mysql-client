@@ -1,5 +1,5 @@
 FROM alpine
 RUN apk update && \
     apk add mysql-client
-COPY docker-entrypoint.sh /
-ENTRYPOINT ["docker-entrypoint.sh"]
+COPY create-db.sh /
+ENTRYPOINT ["sh","create-db.sh"]
